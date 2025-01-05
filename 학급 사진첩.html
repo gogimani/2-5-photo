@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학급 사진 갤러리</title>
+    <link rel="stylesheet" href="학급사진첩.css">
+</head>
+<body>
+    <header>
+        <h1>학급 사진 갤러리</h1>
+    </header>
+
+    <section class="gallery">
+        <!-- 각 카테고리 별로 사진 링크 -->
+        <div class="category">
+            <h2><a href="file:///C:/Users/minse/Desktop/%ED%95%99%EA%B8%89%20%EC%82%AC%EC%A7%84%EC%B2%A9/%EB%B2%97%EA%BD%83.html" >벗꽃</a></h2>
+        </div>
+
+        <div class="category">
+            <h2><a href="file:///C:/Users/minse/Desktop/%ED%95%99%EA%B8%89%20%EC%82%AC%EC%A7%84%EC%B2%A9/%EA%B3%A0%EA%B8%B0%ED%8C%8C%ED%8B%B0.html" >고기파티</a></h2>
+        </div>
+
+        <div class="category">
+            <h2><a href="file:///C:/Users/minse/Desktop/%ED%95%99%EA%B8%89%20%EC%82%AC%EC%A7%84%EC%B2%A9/%EC%B2%B4%EC%9C%A1%EB%8C%80%ED%9A%8C.html" >체육 대회</a></h2>
+        </div>
+    </section>
+
+    <section class="photo-display">
+        <!-- 사진들이 랜덤하게 배치될 부분 -->
+        <div class="photos">
+            <img src="1712302736670.jpg" alt="벚꽃 사진 1">
+            <img src="20240405_155628(0).jpg" alt="벚꽃 사진 2">
+            <img src="20240509_142538.jpg" alt="체육 대회 사진 1">
+            <img src="20240509_160852.jpg" alt="체육 대회 사진 2">
+            <img src="IMG_2952.png" alt="일반 사진 1">
+            <img src="IMG_2956.png" alt="일반 사진 2">
+            <img src="20240513_191452.jpg" alt="고기파티 사진 1">
+            <img src="20240513_184656.jpg" alt="고기파티 사진 2">
+            <img src="IMG_2015.png" alt="일반 사진 1">
+            <img src="20241030_144058.jpg" alt="일반 사진 1">
+            <img src="20240513_171833.jpg" alt="일반 사진 1">
+            <img src="20240405_160630.jpg" alt="일반 사진 1">
+
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="modal" class="modal" onclick="closeModal()">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImg">
+    </div>
+
+    <script src="학급사진첩.js"></script>
+    <script>
+        // 사진 랜덤 배치를 위한 스크립트
+        document.addEventListener("DOMContentLoaded", function() {
+            var photos = document.querySelectorAll(".photos img");
+            photos.forEach(function(photo) {
+                var randomX = Math.random() * 20;  // 가로 위치 제한
+                var randomY = Math.random() * 20;  // 세로 위치 제한
+                var randomRotation = Math.random() * 10 - 5;  // 회전 각도 제한
+
+                photo.style.position = "relative";  // absolute에서 relative로 수정
+                photo.style.transform = `translate(${randomX}px, ${randomY}px) rotate(${randomRotation}deg)`; // 위치와 회전 적용
+            });
+        });
+
+        // 모달 창 열기
+        function openModal(src) {
+            var modal = document.getElementById("modal");
+            var modalImg = document.getElementById("modalImg");
+            modal.style.display = "block";
+            modalImg.src = src;
+        }
+
+        // 모달 창 닫기
+        function closeModal() {
+            var modal = document.getElementById("modal");
+            modal.style.display = "none";
+        }
+    </script>
+</body>
+</html>

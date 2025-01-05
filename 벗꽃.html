@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>벗꽃</title>
+    <link rel="stylesheet" href="학급사진첩.css">
+</head>
+<body>
+    <header>
+        <h1>벚꽃</h1>
+    </header>
+    <div class="category">
+        <h2><a href="file:///C:/Users/minse/Desktop/%ED%95%99%EA%B8%89%20%EC%82%AC%EC%A7%84%EC%B2%A9/%ED%95%99%EA%B8%89%20%EC%82%AC%EC%A7%84%EC%B2%A9.html" >홈</a></h2>
+    </div>
+
+    <section class="gallery">
+
+
+        <div class="category">
+            <div class="photos">
+                <img src="20240405_155628(0).jpg" alt="체육 대회 사진 1" onclick="openModal(this.src)">
+                <img src="20240405_160630.jpg" alt="체육 대회 사진 2" onclick="openModal(this.src)">
+                <img src="20240405_160829.jpg" alt="체육 대회 사진 1" onclick="openModal(this.src)">
+                <img src="20240405_160558.jpg" alt="체육 대회 사진 2" onclick="openModal(this.src)">
+                <img src="20240405_160829.jpg" alt="체육 대회 사진 2" onclick="openModal(this.src)">
+                <img src="20240405_161308.jpg" alt="체육 대회 사진 1" onclick="openModal(this.src)">
+                <img src="20240405_161456.jpg" alt="체육 대회 사진 1" onclick="openModal(this.src)">
+                <img src="20240405_161401.jpg" alt="체육 대회 사진 1" onclick="openModal(this.src)">
+                <img src="1712302736670.jpg" alt="체육 대회 사진 1" onclick="openModal(this.src)">
+            </div>
+        </div>
+
+
+
+
+    </section>
+
+    <!-- Modal -->
+    <div id="modal" class="modal" onclick="closeModal()">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImg">
+    </div>
+
+    <script src="학급사진첩.js"></script>
+</body>
+</html>
+
